@@ -1,0 +1,143 @@
+@font-face {
+    font-family: "emerson";
+    src: local("emerson"), url('../Fonts/Canopee.otf') format("truetype");
+  }
+  @font-face {
+    font-family: "cresent";
+    src: local("cresent"), url('../Fonts/Dida.otf') format("truetype");
+  }
+  @font-face {
+    font-family: "bigilla";
+    src: local("bigilla"), url('../Fonts/River.otf') format("truetype");
+  }
+  @font-face {
+    font-family: "oakland";
+    src: local("oakland"), url('../Fonts/Oakland.otf') format("truetype");
+  }
+
+.title-bar{
+    z-index: 500;
+    width: 100vw;
+    display: flex;
+    font-size: 3rem;
+    text-align: center;
+    align-items: center;
+    font-family: emerson;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 0 4px 2px -2px gray;
+}
+.carousel-slide{
+    // height: 70vh;
+    display: flex;
+    overflow: hidden;
+    padding-bottom: 2rem;
+    align-items: center;
+    border-radius: 4rem;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(230, 230, 230);
+    
+    .carousel-image{
+        width: 50vw;
+        display: flex;
+        object-fit: contain;
+        align-items: center;
+        justify-content: center;
+        img{
+            object-fit: contain;
+        }
+    }
+    .carousel-text{
+        width: 50vw;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+
+        h1{
+            font-family: cresent;
+        }
+        h4{
+            font-size: 30px;
+            margin: 2rem;
+            font-family: "bigilla", "sans-serif";
+        }
+        button{
+            border: none;
+            width: 15rem;
+            padding: 1.5rem;
+            cursor: pointer;
+            margin-top: 5rem;
+            border-radius: 4rem;
+            background-color: red;
+        }
+    }
+}
+.games-card{
+    // display: flex;
+    margin-top: 5rem;
+    overflow: hidden;
+    text-align: center;
+    justify-content: space-around;
+    h1{
+        font-family: cresent;
+        color: rgb(50, 50, 247);
+    }
+
+    .game-images{
+        margin: .5rem;
+        transition: .5s;
+        overflow: hidden;
+        object-fit: contain;
+        p{
+            font-weight: bold;
+            font-family: "bigilla", "sans-serif";
+        }
+    }
+    .game-images img{
+        border-radius: 3rem;
+    }
+    .game-images:hover{
+        cursor: pointer;
+        scale: 0.9;
+    }
+
+}
+.accessories-section{
+    margin-top: 5rem;
+    overflow: hidden;
+    text-align: center;
+    justify-content: space-around;
+
+    h1{
+     font-family: cresent;   
+     color: rgb(50, 50, 247);
+    }
+    p{
+        font-weight: bold;
+        font-family: "bigilla", "sans-serif";
+    }
+    .accessories-images{
+        width: 50rem;
+        margin: 1rem;
+        transition: .5s;
+        overflow: hidden;
+        object-fit: contain;
+        img{
+            border-radius: 4rem;
+        }
+    }
+    .accessories-images:hover{
+        cursor: pointer;
+        scale: 0.9;
+    }
+}
+
+@media (max-width: 920px) {
+.carousel-slide{
+    height: auto;
+    flex-direction: column;
+}
+}

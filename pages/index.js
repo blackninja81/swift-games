@@ -1,9 +1,13 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import HomepageIndex from '../Components/HomePage/HomepageIndex'
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "@next/font/google";
+import TopBar from "../Components/Layout/TopBar";
+import { getGames } from "../lib/Providers/Games";
+import Carousel from "../Components/HomePage/Carousel";
+import GamesCard from "../Components/HomePage/GamesCard";
+import Accessories from "../Components/HomePage/Accessories";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -15,8 +19,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <HomepageIndex/>
-
+      <TopBar />
+      <Carousel />
+      <GamesCard />
+      <Accessories />
     </>
-  )
+  );
 }
+
+export const getServerSideProps = async () => {
+  // const game = await getGames();
+
+  return {
+    props: { },
+  };
+};
