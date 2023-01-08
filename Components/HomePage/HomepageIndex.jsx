@@ -4,7 +4,7 @@ import Carousel from './Carousel'
 import TopBar from '../Layout/TopBar'
 import Accessories from './Accessories'
 
-const Index = () => {
+const Index = (gameData) => {
   return (
     <div>
       <TopBar/>

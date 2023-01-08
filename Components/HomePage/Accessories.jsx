@@ -18,49 +18,32 @@ const Accessories = () => {
       <div>
       <Splide options={
             {
-              type   : 'loop',
+              // type   : 'loop',
               drag   : 'free',
               focus  : 'center',
-              perPage: 4,
+              perPage: 5,
               autoScroll: {
                 speed: 1,
               },
                 breakpoints: {
-                    640: {
+                  1600: {
+                    perPage: 4,
+                  },
+                  1320: {
+                    perPage: 3,
+                  },
+                  1024: {
+                    perPage: 2,
+                  },
+                    720: {
                         perPage: 1,
                     },
-                    900: {
-                        perPage: 2,
-                    },
+                     
               }
             }
         }>
         <SplideSlide className='accessories-images'>
-          <Image src={game1} height={400} width={300}/>
-          <p>Price: 2000</p>
-        </SplideSlide>
-        <SplideSlide className='accessories-images'>
-          <Image src={game2} height={400} width={300}/>
-          <p>Price: 2000</p>
-        </SplideSlide>
-        <SplideSlide className='accessories-images'>
-          <Image src={game3} height={400} width={300}/>
-          <p>Price: 2000</p>
-        </SplideSlide>
-        <SplideSlide className='accessories-images'>
-          <Image src={game4} height={400} width={300}/>
-          <p>Price: 2000</p>
-        </SplideSlide>
-        <SplideSlide className='accessories-images'>
-          <Image src={game5} height={400} width={300}/>
-          <p>Price: 2000</p>
-        </SplideSlide>
-        <SplideSlide className='accessories-images'>
-          <Image src={game6} height={400} width={300}/>
-          <p>Price: 2000</p>
-        </SplideSlide>
-        <SplideSlide className='accessories-images'>
-          <Image src={game7} height={400} width={300}/>
+          <Image src={game1} height={400} width={300} alt='accesory-image'/>
           <p>Price: 2000</p>
         </SplideSlide>
       </Splide>

@@ -28,13 +28,13 @@
     box-shadow: 0 4px 2px -2px gray;
 }
 .carousel-slide{
+    // height: 70vh;
     display: flex;
     overflow: hidden;
     padding-bottom: 2rem;
-    flex-direction: row;
     align-items: center;
     border-radius: 4rem;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     background-color: rgb(230, 230, 230);
     
@@ -61,6 +61,7 @@
         }
         h4{
             font-size: 30px;
+            margin: 2rem;
             font-family: "bigilla", "sans-serif";
         }
         button{
@@ -74,7 +75,7 @@
         }
     }
 }
-.games-section{
+.games-card{
     // display: flex;
     margin-top: 5rem;
     overflow: hidden;
@@ -86,7 +87,7 @@
     }
 
     .game-images{
-        margin: 1rem;
+        margin: .5rem;
         transition: .5s;
         overflow: hidden;
         object-fit: contain;
@@ -132,4 +133,11 @@
         cursor: pointer;
         scale: 0.9;
     }
+}
+
+@media (max-width: 920px) {
+.carousel-slide{
+    height: auto;
+    flex-direction: column;
+}
 }
