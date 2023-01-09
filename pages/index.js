@@ -3,6 +3,9 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import TopBar from "../Components/Layout/TopBar";
 import { getGames } from "../lib/Providers/Games";
+import Footer from "../Components/Layout/Footer";
+import Category from "../Components/HomePage/Category";
+import Discounts from "../Components/HomePage/Discounts";
 import Carousel from "../Components/HomePage/Carousel";
 import GamesCard from "../Components/HomePage/GamesCard";
 import Accessories from "../Components/HomePage/Accessories";
@@ -21,8 +24,11 @@ export default function Home() {
 
       <TopBar />
       <Carousel />
+      <Category/>
+      <Discounts/>
       <GamesCard />
       <Accessories />
+      <Footer/>
     </>
   );
 }
