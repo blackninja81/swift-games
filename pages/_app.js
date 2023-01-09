@@ -1,5 +1,6 @@
 // import '../styles/globals.css'
 import '../Components/HomePage/Styles.scss'
+import '../Components/ItemsPage/Styles.scss'
 
 //import Bootstrap
 import 'bootstrap/dist/css/bootstrap.css'

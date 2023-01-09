@@ -55,13 +55,22 @@ const Footer = () => {
             Useful links
           </h6>
           <p>
-            <a href="#!" className="text-reset">Discounts</a>
+            <a href="/" className="text-decoration-none text-reset">Home</a>
           </p>
           <p>
-            <a href="#!" className="text-reset">Video Games Collection</a>
+            <a href="/Sale" className="text-decoration-none text-reset">Discounts</a>
           </p>
           <p>
-            <a href="#!" className="text-reset">Accesories</a>
+            <a href="/Playstation" className="text-decoration-none text-reset">PS 4</a>
+          </p>
+          <p>
+            <a href="/Xbox" className="text-decoration-none text-reset">X BOX</a>
+          </p>
+          <p>
+            <a href="Switch" className="text-decoration-none text-reset">Switch</a>
+          </p>
+          <p>
+            <a href="Accessories" className="text-decoration-none text-reset">Accesories</a>
           </p>
         </div>
         <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-center">

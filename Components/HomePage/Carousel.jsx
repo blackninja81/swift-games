@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Sale from '../../Assets//banners/sale.jpg'
 import game1 from "../../Assets/Games/ac-origins.jpg";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 

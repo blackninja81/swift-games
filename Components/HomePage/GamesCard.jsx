@@ -117,7 +117,7 @@ const GamesCard = () => {
             <p>Price: price</p>
           </SplideSlide>
           <SplideSlide className="more-games">
-            <a href="/Games" target="_blank">
+            <a href="/Items" target="_blank">
             <BsFillArrowRightCircleFill />
             </a>
             <h4>More Games</h4>
