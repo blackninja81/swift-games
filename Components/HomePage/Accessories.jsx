@@ -1,12 +1,7 @@
 import React from "react";
 import Image from 'next/image'
-import game1 from '../../Assets/Games/ac-origins.jpg'
-import game2 from '../../Assets/Games/advanced-warfare.jpg'
-import game3 from '../../Assets/Games/anthem.jpg'
-import game4 from '../../Assets/Games/apex-legends.jpg'
-import game5 from '../../Assets/Games/avengers.jpg'
-import game6 from '../../Assets/Games/destiny.jpg'
-import game7 from '../../Assets/Games/doom.jpg'
+import game1 from '../../Assets/Accessories/beat.webp'
+import { BsFillArrowRightCircleFill } from 'react-icons/bs'
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
@@ -19,6 +14,7 @@ const Accessories = () => {
       <Splide options={
             {
               // type   : 'loop',
+              arrowPath:'false',
               drag   : 'free',
               focus  : 'center',
               perPage: 5,
@@ -46,6 +42,40 @@ const Accessories = () => {
           <Image src={game1} height={400} width={300} alt='accesory-image'/>
           <p>Price: 2000</p>
         </SplideSlide>
+        <SplideSlide className='accessories-images'>
+          <Image src={game1} height={400} width={300} alt='accesory-image'/>
+          <p>Price: 2000</p>
+        </SplideSlide>
+        <SplideSlide className='accessories-images'>
+          <Image src={game1} height={400} width={300} alt='accesory-image'/>
+          <p>Price: 2000</p>
+        </SplideSlide>
+        <SplideSlide className='accessories-images'>
+          <Image src={game1} height={400} width={300} alt='accesory-image'/>
+          <p>Price: 2000</p>
+        </SplideSlide>
+        <SplideSlide className='accessories-images'>
+          <Image src={game1} height={400} width={300} alt='accesory-image'/>
+          <p>Price: 2000</p>
+        </SplideSlide>
+        <SplideSlide className='accessories-images'>
+          <Image src={game1} height={400} width={300} alt='accesory-image'/>
+          <p>Price: 2000</p>
+        </SplideSlide>
+        <SplideSlide className='accessories-images'>
+          <Image src={game1} height={400} width={300} alt='accesory-image'/>
+          <p>Price: 2000</p>
+        </SplideSlide>
+        <SplideSlide className='accessories-images'>
+          <Image src={game1} height={400} width={300} alt='accesory-image'/>
+          <p>Price: 2000</p>
+        </SplideSlide>
+        <SplideSlide className="more-accessories">
+            <a href="/Accesories" target="_blank">
+            <BsFillArrowRightCircleFill />
+            </a>
+            <h4>More Accessories</h4>
+          </SplideSlide>
       </Splide>
       </div>
     </div>
