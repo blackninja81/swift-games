@@ -1,6 +1,9 @@
 // import '../styles/globals.css'
 import '../Components/HomePage/Styles.scss'
 import '../Components/ItemsPage/Styles.scss'
+import '../Components/DetailsPage/Details.scss'
+
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 //import Bootstrap
 import 'bootstrap/dist/css/bootstrap.css'
