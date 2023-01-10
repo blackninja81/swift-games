@@ -71,7 +71,7 @@ const Accessories = () => {
           <p>Price: 2000</p>
         </SplideSlide>
         <SplideSlide className="more-accessories">
-            <a href="/Items" target="_blank">
+            <a href="/Accessories" target="_blank">
             <BsFillArrowRightCircleFill />
             </a>
             <h4>More Accessories</h4>
