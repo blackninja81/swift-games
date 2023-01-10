@@ -1,5 +1,6 @@
 // import '../styles/globals.css'
 import '../Components/HomePage/Styles.scss'
+import '../Components/Layout/Layout.scss'
 import '../Components/ItemsPage/Styles.scss'
 import '../Components/DetailsPage/Details.scss'
 
