@@ -4,7 +4,9 @@ import game1 from "../../Assets/Games/ac-origins.jpg";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
-const GamesCard = () => {
+const GamesCard = ( { item } ) => {
+
+  console.log(item)
   return (
     <div className="games-card">
       <div>
@@ -38,45 +40,10 @@ const GamesCard = () => {
             <SplideSlide className="game-images">
           <a href="/Details">
               <Image src={game1} height={400} width={300} alt="game-cover" />
-              <h4>titles</h4>
+              <h4>{item.attributes.title}</h4>
               <p>Price: price</p>
           </a>
             </SplideSlide>
-          <SplideSlide className="game-images">
-            <Image src={game1} height={400} width={300} alt="game-cover" />
-            <h4>title</h4>
-            <p>Price: price</p>
-          </SplideSlide>
-          <SplideSlide className="game-images">
-            <Image src={game1} height={400} width={300} alt="game-cover" />
-            <h4>title</h4>
-            <p>Price: price</p>
-          </SplideSlide>
-          <SplideSlide className="game-images">
-            <Image src={game1} height={400} width={300} alt="game-cover" />
-            <h4>title</h4>
-            <p>Price: price</p>
-          </SplideSlide>
-          <SplideSlide className="game-images">
-            <Image src={game1} height={400} width={300} alt="game-cover" />
-            <h4>title</h4>
-            <p>Price: price</p>
-          </SplideSlide>
-          <SplideSlide className="game-images">
-            <Image src={game1} height={400} width={300} alt="game-cover" />
-            <h4>title</h4>
-            <p>Price: price</p>
-          </SplideSlide>
-          <SplideSlide className="game-images">
-            <Image src={game1} height={400} width={300} alt="game-cover" />
-            <h4>title</h4>
-            <p>Price: price</p>
-          </SplideSlide>
-          <SplideSlide className="game-images">
-            <Image src={game1} height={400} width={300} alt="game-cover" />
-            <h4>title</h4>
-            <p>Price: price</p>
-          </SplideSlide>
           <SplideSlide className="more-games">
             <a href="/Playstation" target="_blank">
               <BsFillArrowRightCircleFill />

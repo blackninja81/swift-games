@@ -1,0 +1,78 @@
+@font-face {
+  font-family: "emerson";
+  src: local("emerson"), url("../../Fonts/Canopee.otf") format("truetype");
+}
+@font-face {
+  font-family: "cresent";
+  src: local("cresent"), url("../../Fonts/Dida.otf") format("truetype");
+}
+@font-face {
+  font-family: "bigilla";
+  src: local("bigilla"), url("../../Fonts/River.otf") format("truetype");
+}
+@font-face {
+  font-family: "oakland";
+  src: local("oakland"), url("../../Fonts/Oakland.otf") format("truetype");
+}
+.image-section {
+  img {
+    object-fit: contain;
+  }
+}
+.item-details-section {
+  display: grid;
+  margin: 7rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  .image-section {
+    padding: 2rem;
+    border-radius: 4rem;
+  }
+  .text-section {
+    padding: 0 5rem;
+    h1 {
+      text-align: center;
+      font-family: cresent;
+    }
+    h3 {
+      font-family: oakland;
+      margin: 5rem 0rem;
+    }
+    h4 {
+      font-family: bigilla;
+      margin: 5rem 0rem;
+    }
+    ul {
+      li {
+        font-size: 25px;
+        font-family: bigilla;
+      }
+    }
+    button {
+      display: flex;
+      border: none;
+      font-size: 2rem;
+      padding: 1.5rem;
+      transition: 0.7s;
+      border-radius: 4rem;
+      align-items: center;
+      justify-content: center;
+      background-color: lightblue;
+      &:hover {
+        color: blue;
+        box-shadow: 10px 10px 5px lightblue;
+      }
+      h5 {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+@media (max-width: 1000px) {
+  .item-details-section{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  }

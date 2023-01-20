@@ -1,18 +1,21 @@
+import axios from "axios";
 import Head from "next/head";
+import { useState } from "react";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import TopBar from "../Components/Layout/TopBar";
-import { getGames } from "../lib/Providers/Games";
 import Footer from "../Components/Layout/Footer";
 import Category from "../Components/HomePage/Category";
 import Discounts from "../Components/HomePage/Discounts";
 import Carousel from "../Components/HomePage/Carousel";
 import GamesCard from "../Components/HomePage/GamesCard";
 import Accessories from "../Components/HomePage/Accessories";
+import { getAccessories } from "../lib/Providers/Accessories";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export default function Home() {
+export default function Home({ res }) {
+  {
+    console.log(res);
+  }
   return (
     <>
       <Head>
@@ -21,22 +24,30 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <TopBar />
+
       <Carousel />
-      <Category/>
-      <Discounts/>
-      <GamesCard />
+      <Category />
+      <Discounts />
+      
+      {res.map((item) => (
+        <GamesCard key={item.id} item={item} />
+      ))}
+      
       <Accessories />
-      <Footer/>
+      <Footer />
     </>
   );
 }
 
 export const getServerSideProps = async () => {
-  // const game = await getGames();
-
+  const { data } = await axios.get(process.env.REACT_API_URL + `/games`, {
+    headers: {
+      Authorization: " bearer " + process.env.REACT_ACCESS_TOKEN,
+    },
+  });
+  const res = data.data;
   return {
-    props: { },
+    props: { res, res },
   };
 };

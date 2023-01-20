@@ -39,35 +39,35 @@ const Accessories = () => {
             }
         }>
         <SplideSlide className='accessories-images'>
-          <Image src={game1} height={400} width={300} alt='accesory-image'/>
+          <Image src={game1} height={300} width={300} alt='accesory-image'/>
+          <p>Price: 3000</p>
+        </SplideSlide>
+        <SplideSlide className='accessories-images'>
+          <Image src={game1} height={300} width={300} alt='accesory-image'/>
           <p>Price: 2000</p>
         </SplideSlide>
         <SplideSlide className='accessories-images'>
-          <Image src={game1} height={400} width={300} alt='accesory-image'/>
+          <Image src={game1} height={300} width={300} alt='accesory-image'/>
           <p>Price: 2000</p>
         </SplideSlide>
         <SplideSlide className='accessories-images'>
-          <Image src={game1} height={400} width={300} alt='accesory-image'/>
+          <Image src={game1} height={300} width={300} alt='accesory-image'/>
           <p>Price: 2000</p>
         </SplideSlide>
         <SplideSlide className='accessories-images'>
-          <Image src={game1} height={400} width={300} alt='accesory-image'/>
+          <Image src={game1} height={300} width={300} alt='accesory-image'/>
           <p>Price: 2000</p>
         </SplideSlide>
         <SplideSlide className='accessories-images'>
-          <Image src={game1} height={400} width={300} alt='accesory-image'/>
+          <Image src={game1} height={300} width={300} alt='accesory-image'/>
           <p>Price: 2000</p>
         </SplideSlide>
         <SplideSlide className='accessories-images'>
-          <Image src={game1} height={400} width={300} alt='accesory-image'/>
+          <Image src={game1} height={300} width={300} alt='accesory-image'/>
           <p>Price: 2000</p>
         </SplideSlide>
         <SplideSlide className='accessories-images'>
-          <Image src={game1} height={400} width={300} alt='accesory-image'/>
-          <p>Price: 2000</p>
-        </SplideSlide>
-        <SplideSlide className='accessories-images'>
-          <Image src={game1} height={400} width={300} alt='accesory-image'/>
+          <Image src={game1} height={300} width={300} alt='accesory-image'/>
           <p>Price: 2000</p>
         </SplideSlide>
         <SplideSlide className="more-accessories">

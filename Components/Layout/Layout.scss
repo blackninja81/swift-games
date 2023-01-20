@@ -1,0 +1,104 @@
+@font-face {
+    font-family: "emerson";
+    src: local("emerson"), url('../../Fonts/Canopee.otf') format("truetype");
+  }
+  @font-face {
+    font-family: "cresent";
+    src: local("cresent"), url('../../Fonts/Dida.otf') format("truetype");
+  }
+  @font-face {
+    font-family: "bigilla";
+    src: local("bigilla"), url('../../Fonts/River.otf') format("truetype");
+  }
+  @font-face {
+    font-family: "oakland";
+    src: local("oakland"), url('../../Fonts/Oakland.otf') format("truetype");
+  }
+
+.title-bar{
+    z-index: 999;
+    top: 0;
+    width: 100vw;
+    display: flex;
+    position: fixed;
+    font-size: 3rem;
+    text-align: center;
+    align-items: center;
+    background-color: white;
+    justify-content: space-around;
+    box-shadow: 0 4px 2px -2px lightblue;
+    h1{
+        font-family: emerson;
+    }
+    a{
+        font-size: 3rem;
+        color: black;
+        text-decoration: none;
+    }
+}
+.shopping-card{
+    top: 100px;
+    right: 20px;
+    z-index: 999;
+    padding: 4rem;
+    border-radius: 4rem;
+    position: fixed;
+    background-color: white;
+    box-shadow: 10px 10px 5px lightblue;
+    .card-main{
+        margin-top: 2px;
+        padding: 2rem;
+        border-radius: 2rem;
+        border: 1px solid;
+    }
+    h1{
+        padding: 1rem 0;
+        font-family: cresent;
+        text-align: center;
+    }
+    button{
+        padding: 2rem;
+        border: white;
+        margin-top: 2rem;
+        font-family: oakland;
+        border-radius: 4rem;
+        transition: .5s;
+        background-color: lightblue;
+        &:hover{
+            box-shadow: 10px 10px 5px lightblue;
+        }
+    }
+    .card-details{
+        display: flex;
+        text-align: center;
+        align-items: center;
+        font-family: bigilla;
+        justify-content: center;
+        .delete-item{
+            font-size: 3rem;
+            color: red;
+        }
+    }
+    .card-text{
+        padding: 0 3rem;
+    }
+    .price{
+        display: flex;
+        margin-top: 2rem;
+        align-items: center;
+        font-family: bigilla;
+        justify-content: space-around;
+    }
+}
+.cart-icon{
+    span{
+        color: lightblue;
+        font-size: 25px;
+        border-radius: 4rem;
+    }
+}
+@media (max-width: 920px) {
+    .card-details{
+        flex-direction: column;
+    }
+    }
