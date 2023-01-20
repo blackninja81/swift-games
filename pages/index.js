@@ -8,14 +8,12 @@ import Footer from "../Components/Layout/Footer";
 import Category from "../Components/HomePage/Category";
 import Discounts from "../Components/HomePage/Discounts";
 import Carousel from "../Components/HomePage/Carousel";
+import Game from "../Components/HomePage/Game";
 import GamesCard from "../Components/HomePage/GamesCard";
 import Accessories from "../Components/HomePage/Accessories";
 import { getAccessories } from "../lib/Providers/Accessories";
 
 export default function Home({ res }) {
-  {
-    console.log(res);
-  }
   return (
     <>
       <Head>
@@ -29,11 +27,7 @@ export default function Home({ res }) {
       <Carousel />
       <Category />
       <Discounts />
-      
-      {res.map((item) => (
-        <GamesCard key={item.id} item={item} />
-      ))}
-      
+      <GamesCard key={res.id} res={res} />
       <Accessories />
       <Footer />
     </>
@@ -41,13 +35,13 @@ export default function Home({ res }) {
 }
 
 export const getServerSideProps = async () => {
-  const { data } = await axios.get(process.env.REACT_API_URL + `/games`, {
+  const { data } = await axios.get(process.env.REACT_API_URL + `/games?populate=*`, {
     headers: {
       Authorization: " bearer " + process.env.REACT_ACCESS_TOKEN,
     },
   });
   const res = data.data;
   return {
-    props: { res, res },
+    props: { res },
   };
 };
