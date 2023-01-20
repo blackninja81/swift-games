@@ -90,7 +90,7 @@ const Footer = () => {
     </div>
   </section>
   <div className="text-center p-4">
-    © 2022 Copyright:
+    © {new Date().getFullYear()} Copyright:
     <a className="text-reset fw-bold" href="https://timbaktum.com">Swift Games</a>
   </div>
   {/* <!-- Copyright --> */}

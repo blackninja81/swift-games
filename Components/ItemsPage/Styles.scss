@@ -1,0 +1,80 @@
+@font-face {
+    font-family: "emerson";
+    src: local("emerson"), url('../../Fonts/Canopee.otf') format("truetype");
+  }
+  @font-face {
+    font-family: "cresent";
+    src: local("cresent"), url('../../Fonts/Dida.otf') format("truetype");
+  }
+  @font-face {
+    font-family: "bigilla";
+    src: local("bigilla"), url('../../Fonts/River.otf') format("truetype");
+  }
+  @font-face {
+    font-family: "oakland";
+    src: local("oakland"), url('../../Fonts/Oakland.otf') format("truetype");
+  }
+
+.item-section{
+    gap: 2rem;
+    display: grid;
+    padding: 4rem;
+    margin-bottom: 10rem;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    .item-card{
+        display: flex;
+        padding: 2rem;
+        color: black;
+        align-items: center;
+        border-radius: 4rem;
+        font-family: emerson;
+        text-decoration: none;
+        flex-direction: column;
+        justify-content: center;
+        background-color: white;
+        box-shadow: 10px 10px 5px lightblue;
+        h3{
+            margin-top: 2rem;
+        }
+        .item-image{
+            height: 25rem;
+        }
+        .item-text{
+            padding-top: 2rem;
+            text-align: center;
+            h4{
+            &:first-child{
+                color: grey;
+                text-decoration: line-through;
+            }
+        }
+            button{
+                padding: 1rem;
+                margin: 1rem;
+                width: 12rem;
+                border-style: none;
+                border-radius: 4rem;
+                background-color: lightblue;
+            }
+        }
+    }
+}
+.playstation-page{
+    h1{
+        color: black;
+        padding: 2rem;
+        text-align: center;
+        font-family: cresent;
+    }
+    img{
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+    }
+}
+@media (max-width: 820px) {
+   .item-section{
+    display: flex;
+    flex-direction: column;
+   }
+    }
