@@ -1,12 +1,12 @@
 import React from "react";
 import Image from "next/image";
+import Game from "./Game";
 import game1 from "../../Assets/Games/ac-origins.jpg";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
-const GamesCard = ( { item } ) => {
-
-  console.log(item)
+const GamesCard = ({ res }) => {
+  // console.log(res[0].attributes.image.data[0].attributes.name);
   return (
     <div className="games-card">
       <div>
@@ -37,13 +37,13 @@ const GamesCard = ( { item } ) => {
             },
           }}
         >
+          {res.map((item) => (
             <SplideSlide className="game-images">
-          <a href="/Details">
-              <Image src={game1} height={400} width={300} alt="game-cover" />
-              <h4>{item.attributes.title}</h4>
-              <p>Price: price</p>
-          </a>
+              <a href="/Details">
+                <Game key={item.id} item={item} />
+              </a>
             </SplideSlide>
+          ))}
           <SplideSlide className="more-games">
             <a href="/Playstation" target="_blank">
               <BsFillArrowRightCircleFill />
