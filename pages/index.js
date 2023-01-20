@@ -1,17 +1,13 @@
 import axios from "axios";
 import Head from "next/head";
-import { useState } from "react";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
 import TopBar from "../Components/Layout/TopBar";
 import Footer from "../Components/Layout/Footer";
+import { getGames } from "../lib/Providers/Games";
+import Carousel from "../Components/HomePage/Carousel/Carousel";
 import Category from "../Components/HomePage/Category";
-import Discounts from "../Components/HomePage/Discounts";
-import Carousel from "../Components/HomePage/Carousel";
-import Game from "../Components/HomePage/Game";
-import GamesCard from "../Components/HomePage/GamesCard";
-import Accessories from "../Components/HomePage/Accessories";
-import { getAccessories } from "../lib/Providers/Accessories";
+import Discounts from "../Components/HomePage/Discounts/Discounts";
+import GamesCard from "../Components/HomePage/games/GamesCard";
+import Accessories from "../Components/HomePage/Accessories/Accessories";
 
 export default function Home({ res }) {
   return (
@@ -35,12 +31,7 @@ export default function Home({ res }) {
 }
 
 export const getServerSideProps = async () => {
-  const { data } = await axios.get(process.env.REACT_API_URL + `/games?populate=*`, {
-    headers: {
-      Authorization: " bearer " + process.env.REACT_ACCESS_TOKEN,
-    },
-  });
-  const res = data.data;
+  const res = await getGames();
   return {
     props: { res },
   };
