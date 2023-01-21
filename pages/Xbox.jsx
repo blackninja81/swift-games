@@ -1,14 +1,47 @@
-import React from "react";
 import Head from "next/head";
 import Image from "next/image";
-import Footer from '../Components/Layout/Footer'
+import { React, useState, useEffect } from "react";
+import Footer from "../Components/Layout/Footer";
 import TopBar from "../Components/Layout/TopBar";
+import { GameContext } from "../context/Context";
+import { ThreeCircles } from "react-loader-spinner";
 import Category from "../Components/HomePage/Category";
-import Playstation from '../Assets/banners/xbox.jpg'
+import Playstation from "../Assets/banners/xbox.jpg";
 import { getXboxGames } from "../lib/Providers/Games";
-import ItemCard from "../Components/ItemsPage/PlaystationCard";
+import ItemCard from "../Components/ItemsPage/XboxCard";
 
-const PlayStation = () => {
+const XBox = ({ res }) => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => {
+      clearTimeout(timer);
+    }
+  }, [res]);
+  
+  if (loading) {
+    return (
+      <div className="loading-screen">
+        <ThreeCircles
+          height="100"
+          width="100"
+          color="#4fa94d"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+          ariaLabel="three-circles-rotating"
+          outerCircleColor=""
+          innerCircleColor=""
+          middleCircleColor=""
+        />
+      </div>
+    );
+  }
+
   return (
     <>
       <Head>
@@ -20,15 +53,22 @@ const PlayStation = () => {
       <div className="playstation-page">
         <TopBar />
         <h1>X BOX Games</h1>
-        <Image
-        src={Playstation}
-        />
-        <ItemCard />
+        <Image src={Playstation} />
+        <GameContext.Provider value={{ res }}>
+          <ItemCard />
+        </GameContext.Provider>
         <Category />
-        <Footer/>
+        <Footer />
       </div>
     </>
   );
 };
 
-export default PlayStation;
+export const getServerSideProps = async () => {
+  const res = await getXboxGames();
+  return {
+    props: { res },
+  };
+};
+
+export default XBox;

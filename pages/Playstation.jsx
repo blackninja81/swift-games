@@ -1,6 +1,7 @@
-import React from "react";
 import Head from "next/head";
 import Image from "next/image";
+import { React, useState, useEffect } from "react";
+import { ThreeCircles } from "react-loader-spinner";
 import Footer from '../Components/Layout/Footer'
 import TopBar from "../Components/Layout/TopBar";
 import { GameContext } from "../context/Context";
@@ -10,6 +11,37 @@ import Playstation from '../Assets/banners/playstation2.jpg'
 import ItemCard from "../Components/ItemsPage/PlaystationCard";
 
 const PlayStation = ({res}) => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => {
+      clearTimeout(timer);
+    }
+  }, [res]);
+
+  if (loading) {
+    return (
+      <div className="loading-screen">
+        <ThreeCircles
+          height="100"
+          width="100"
+          color="blue"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+          ariaLabel="three-circles-rotating"
+          outerCircleColor=""
+          innerCircleColor=""
+          middleCircleColor=""
+        />
+      </div>
+    );
+  }
+
   return (
     <>
       <Head>
