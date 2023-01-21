@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { useState } from 'react';
 
 export const getGames = async () => {
     const { data } = await axios.get(process.env.REACT_API_URL + `/games?populate=*&pagination[page]=1&pagination[pageSize]=10`, {
@@ -26,7 +27,7 @@ export const getPs4Games = async () => {
   return [];
 };
 
-export const getXboxGames = async () => {
+export const getXboxGames = async () => {  
   const { data } = await axios.get(process.env.REACT_API_URL + `/games?populate=*&filters[plartform][$eq]=xbox1`, {
       headers: {
         Authorization: " bearer " + process.env.REACT_ACCESS_TOKEN,
