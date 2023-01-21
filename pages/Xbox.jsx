@@ -4,8 +4,9 @@ import Image from "next/image";
 import Footer from '../Components/Layout/Footer'
 import TopBar from "../Components/Layout/TopBar";
 import Category from "../Components/HomePage/Category";
-import ItemCard from "../Components/ItemsPage/ItemCard";
 import Playstation from '../Assets/banners/xbox.jpg'
+import { getXboxGames } from "../lib/Providers/Games";
+import ItemCard from "../Components/ItemsPage/PlaystationCard";
 
 const PlayStation = () => {
   return (

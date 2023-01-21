@@ -3,11 +3,13 @@ import Head from "next/head";
 import Image from "next/image";
 import Footer from '../Components/Layout/Footer'
 import TopBar from "../Components/Layout/TopBar";
+import { GameContext } from "../context/Context";
+import { getPs4Games } from "../lib/Providers/Games";
 import Category from "../Components/HomePage/Category";
-import ItemCard from "../Components/ItemsPage/ItemCard";
 import Playstation from '../Assets/banners/playstation2.jpg'
+import ItemCard from "../Components/ItemsPage/PlaystationCard";
 
-const PlayStation = () => {
+const PlayStation = ({res}) => {
   return (
     <>
       <Head>
@@ -22,12 +24,21 @@ const PlayStation = () => {
         <Image
         src={Playstation}
         />
+        <GameContext.Provider value={{ res }}>
         <ItemCard />
+        </GameContext.Provider>
         <Category />
         <Footer/>
       </div>
     </>
   );
+};
+
+export const getServerSideProps = async () => {
+  const res = await getPs4Games();
+  return {
+    props: { res },
+  };
 };
 
 export default PlayStation;

@@ -3,10 +3,11 @@ import Head from "next/head";
 import TopBar from "../Components/Layout/TopBar";
 import Footer from "../Components/Layout/Footer";
 import { getGames } from "../lib/Providers/Games";
-import Carousel from "../Components/HomePage/Carousel/Carousel";
+import { GameContext } from "../context/Context";
 import Category from "../Components/HomePage/Category";
-import Discounts from "../Components/HomePage/Discounts/Discounts";
 import GamesCard from "../Components/HomePage/games/GamesCard";
+import Carousel from "../Components/HomePage/Carousel/Carousel";
+import Discounts from "../Components/HomePage/Discounts/Discounts";
 import Accessories from "../Components/HomePage/Accessories/Accessories";
 
 export default function Home({ res }) {
@@ -19,11 +20,12 @@ export default function Home({ res }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TopBar />
-
       <Carousel />
       <Category />
       <Discounts />
-      <GamesCard key={res.id} res={res} />
+      <GameContext.Provider value={{ res }}>
+        <GamesCard />
+      </GameContext.Provider>
       <Accessories />
       <Footer />
     </>
