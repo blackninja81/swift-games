@@ -5,7 +5,7 @@ import axios from "axios";
 import Footer from '../Components/Layout/Footer'
 import TopBar from "../Components/Layout/TopBar";
 import Category from "../Components/HomePage/Category";
-import ItemCard from "../Components/ItemsPage/ItemCard";
+import ItemCard from "../Components/ItemsPage/PlaystationCard";
 import Playstation from '../Assets/banners/Accessory2.jpg'
 
 const Accessory = () => {
