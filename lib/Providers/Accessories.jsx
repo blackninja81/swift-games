@@ -1,7 +1,8 @@
 import axios from 'axios';
+import endpoints from '../routes/Endpoints';
 
 export const getHomeAccessories = async () => {
-    const { data } = await axios.get(process.env.REACT_API_URL + `/accessories?populate=*&pagination[page]=1&pagination[pageSize]=10`, {
+    const { data } = await axios.get(process.env.REACT_API_URL + `${endpoints.homeaccessories}`, {
         headers: {
           Authorization: " bearer " + process.env.REACT_ACCESS_TOKEN,
         },
@@ -14,7 +15,7 @@ export const getHomeAccessories = async () => {
 };
 
 export const getAccessories = async () => {
-    const { data } = await axios.get(process.env.REACT_API_URL + `/accessories?populate=*`, {
+    const { data } = await axios.get(process.env.REACT_API_URL + `${accessories}`, {
         headers: {
           Authorization: " bearer " + process.env.REACT_ACCESS_TOKEN,
         },
