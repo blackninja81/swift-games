@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { useState } from 'react';
 
 export const getGames = async () => {
     const { data } = await axios.get(process.env.REACT_API_URL + `/games?populate=*&pagination[page]=1&pagination[pageSize]=10`, {
