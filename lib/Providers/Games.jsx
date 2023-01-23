@@ -1,7 +1,8 @@
-import axios from 'axios';
+import endpoints from '../routes/Endpoints'
+import { makeRequest } from '../MakeRequest';
 
 export const getGames = async () => {
-    const { data } = await axios.get(process.env.REACT_API_URL + `/games?populate=*&pagination[page]=1&pagination[pageSize]=10`, {
+    const { data } = await makeRequest.get(process.env.REACT_API_URL + `${endpoints.homegames}`, {
         headers: {
           Authorization: " bearer " + process.env.REACT_ACCESS_TOKEN,
         },
@@ -14,7 +15,7 @@ export const getGames = async () => {
 };
 
 export const getPs4Games = async () => {
-  const { data } = await axios.get(process.env.REACT_API_URL + `/games?populate=*&filters[plartform][$eq]=ps`, {
+  const { data } = await makeRequest.get(process.env.REACT_API_URL + `${endpoints.ps4}`, {
       headers: {
         Authorization: " bearer " + process.env.REACT_ACCESS_TOKEN,
       },
@@ -27,7 +28,7 @@ export const getPs4Games = async () => {
 };
 
 export const getXboxGames = async () => {  
-  const { data } = await axios.get(process.env.REACT_API_URL + `/games?populate=*&filters[plartform][$eq]=xbox1`, {
+  const { data } = await makeRequest.get(process.env.REACT_API_URL + `${endpoints.xbox}`, {
       headers: {
         Authorization: " bearer " + process.env.REACT_ACCESS_TOKEN,
       },
@@ -40,7 +41,7 @@ export const getXboxGames = async () => {
 };
 
 export const getSwitchGames = async () => {
-  const { data } = await axios.get(process.env.REACT_API_URL + `/games?populate=*&filters[plartform][$eq]=switch`, {
+  const { data } = await makeRequest.get(process.env.REACT_API_URL + `${endpoints.switch}`, {
       headers: {
         Authorization: " bearer " + process.env.REACT_ACCESS_TOKEN,
       },
