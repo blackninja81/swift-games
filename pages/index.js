@@ -3,14 +3,16 @@ import Head from "next/head";
 import TopBar from "../Components/Layout/TopBar";
 import Footer from "../Components/Layout/Footer";
 import { getGames } from "../lib/Providers/Games";
-import { GameContext } from "../context/Context";
+import { getBanner } from "../lib/Providers/Banner";
+import { getDiscounts } from "../lib/Providers/Discount";
+import { GameContext, BannerContext } from "../context/Context";
 import Category from "../Components/HomePage/Category";
 import GamesCard from "../Components/HomePage/games/GamesCard";
 import Carousel from "../Components/HomePage/Carousel/Carousel";
 import Discounts from "../Components/HomePage/Discounts/Discounts";
 import Accessories from "../Components/HomePage/Accessories/Accessories";
 
-export default function Home({ res }) {
+export default function Home({ res, banner, discount }) {
   return (
     <>
       <Head>
@@ -20,9 +22,13 @@ export default function Home({ res }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TopBar />
-      <Carousel />
+      <BannerContext.Provider value={{ banner }}>
+        <Carousel key={banner.id} />
+      </BannerContext.Provider>
       <Category />
-      <Discounts />
+      <GameContext.Provider value={{ discount }}>
+        <Discounts />
+      </GameContext.Provider>
       <GameContext.Provider value={{ res }}>
         <GamesCard />
       </GameContext.Provider>
@@ -34,7 +40,9 @@ export default function Home({ res }) {
 
 export const getServerSideProps = async () => {
   const res = await getGames();
+  const banner = await getBanner();
+  const discount = await getDiscounts();
   return {
-    props: { res },
+    props: { res, banner, discount },
   };
 };
