@@ -5,14 +5,19 @@ import Footer from "../Components/Layout/Footer";
 import { getGames } from "../lib/Providers/Games";
 import { getBanner } from "../lib/Providers/Banner";
 import { getDiscounts } from "../lib/Providers/Discount";
-import { GameContext, BannerContext } from "../context/Context";
+import {
+  GameContext,
+  BannerContext,
+  AccessoryContext,
+} from "../context/Context";
 import Category from "../Components/HomePage/Category";
 import GamesCard from "../Components/HomePage/games/GamesCard";
 import Carousel from "../Components/HomePage/Carousel/Carousel";
 import Discounts from "../Components/HomePage/Discounts/Discounts";
+import { getHomeAccessories } from "../lib/Providers/Accessories";
 import Accessories from "../Components/HomePage/Accessories/Accessories";
 
-export default function Home({ res, banner, discount }) {
+export default function Home({ res, banner, discount, accessories }) {
   return (
     <>
       <Head>
@@ -23,16 +28,23 @@ export default function Home({ res, banner, discount }) {
       </Head>
       <TopBar />
       <BannerContext.Provider value={{ banner }}>
-        <Carousel key={banner.id} />
+        <Carousel />
       </BannerContext.Provider>
+
       <Category />
+
       <GameContext.Provider value={{ discount }}>
         <Discounts />
       </GameContext.Provider>
+
       <GameContext.Provider value={{ res }}>
         <GamesCard />
       </GameContext.Provider>
-      <Accessories />
+
+      <AccessoryContext.Provider value={{ accessories }}>
+        <Accessories />
+      </AccessoryContext.Provider>
+
       <Footer />
     </>
   );
@@ -42,7 +54,8 @@ export const getServerSideProps = async () => {
   const res = await getGames();
   const banner = await getBanner();
   const discount = await getDiscounts();
+  const accessories = await getHomeAccessories();
   return {
-    props: { res, banner, discount },
+    props: { res, banner, discount, accessories },
   };
 };
