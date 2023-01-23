@@ -186,13 +186,17 @@
         font-family: "bigilla", "sans-serif";
     }
     .accessories-images{
-        width: 50rem;
         margin: 1rem;
         transition: .5s;
         overflow: hidden;
         object-fit: contain;
         img{
             border-radius: 4rem;
+        }
+        a{
+            color: black;
+            padding: 1rem;
+            text-decoration: none;
         }
     }
     .accessories-images:hover{
