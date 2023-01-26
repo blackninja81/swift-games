@@ -23,13 +23,10 @@ import { TbChevronsDownLeft } from "react-icons/tb";
 export default function Home({ res, banner, discount, accessories }) {
   const [theme, setTheme] = useState("light");
 
-  const initialRender = useRef(true);
-
   useEffect(() => {
     if (typeof window !== "undefined") {
       const stateString = JSON.stringify(theme);
       window.localStorage.setItem("theme", stateString);
-      console.log(stateString)
     }
   }, [theme]);
 
@@ -37,9 +34,9 @@ export default function Home({ res, banner, discount, accessories }) {
     if (typeof window !== "undefined") {
       const getString = window.localStorage.getItem("theme");
       const state = JSON.parse(getString);
-      setTheme(state)
+      if( getString != null) setTheme(state)
     }
-  }, [theme]);
+  }, []);
   
   const toggleTheme = () => {
     setTheme((state) => (state === "light" ? "dark" : "light"));

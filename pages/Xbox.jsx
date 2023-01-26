@@ -14,8 +14,21 @@ import ItemCard from "../Components/ItemsPage/XboxCard";
 const XBox = ({ res }) => {
 
   const [theme, setTheme] = useState("light");
-  const stateString = JSON.stringify(theme);
-  localStorage.setItem('theme', stateString);
+ 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const stateString = JSON.stringify(theme);
+      window.localStorage.setItem("theme", stateString);
+    }
+  }, [theme]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.localStorage) {
+      const getString = window.localStorage.getItem("theme");
+      const state = JSON.parse(getString);
+      setTheme(state);
+    }
+  }, [theme]);
 
   const toggleTheme = () => {
     setTheme((curr) => (curr === "light" ? "dark" : "light"));
