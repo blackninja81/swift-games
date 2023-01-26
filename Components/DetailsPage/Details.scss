@@ -21,7 +21,7 @@
 }
 .item-details-section {
   display: grid;
-  margin: 7rem 0;
+  padding: 7rem 0;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   .image-section {
     padding: 2rem;

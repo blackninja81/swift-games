@@ -68,6 +68,20 @@
         }
     }
 }
+#light{
+    background-color: white;
+}
+#dark{
+    .playstation-page{
+        transition: 1.5s;
+        background-color :rgba(9,9,121,1); 
+}
+.item-card{
+    transition: 1.5s;
+    background-color :rgb(33, 33, 167);
+    box-shadow: 0 4px 2px -2px rgb(13, 13, 94);
+}
+}
 .playstation-page{
     h1{
         color: black;
