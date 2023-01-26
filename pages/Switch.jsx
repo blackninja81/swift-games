@@ -10,20 +10,22 @@ import Playstation from '../Assets/banners/nitendo.png'
 
 const Switch = () => {
 
-  const [theme, setTheme] = useState("light");
+  const storage = typeof window !== "undefined" ? localStorage.theme: 'light'
+  const [theme, setTheme] = useState(storage);
+
+  useEffect(() => {
+    if (localStorage.getItem('theme') !== theme) {
+      const setString = JSON.stringify(theme);
+      window.localStorage.setItem("theme", setString);
+    }
+  }, [ theme ]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const stateString = JSON.stringify(theme);
-      window.localStorage.setItem("theme", stateString);
-    }
-  }, [theme]);
-
-  useEffect(() => {
-    if (typeof window !== "undefined" && window.localStorage) {
       const getString = window.localStorage.getItem("theme");
       const state = JSON.parse(getString);
-      setTheme(state);
+      setTheme(state)
+      console.log(state)
     }
   }, [theme]);
 

@@ -21,22 +21,24 @@ import { useState, useEffect, useRef } from "react";
 import { TbChevronsDownLeft } from "react-icons/tb";
 
 export default function Home({ res, banner, discount, accessories }) {
-  const [theme, setTheme] = useState("light");
+  const storage = typeof window !== "undefined" ? localStorage.theme: 'light'
+  const [theme, setTheme] = useState(storage);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const stateString = JSON.stringify(theme);
-      window.localStorage.setItem("theme", stateString);
+    if (localStorage.getItem('theme') !== theme) {
+      const setString = JSON.stringify(theme);
+      window.localStorage.setItem("theme", setString);
     }
-  }, [theme]);
+  }, [ theme ]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const getString = window.localStorage.getItem("theme");
       const state = JSON.parse(getString);
-      if( getString != null) setTheme(state)
+      setTheme(state)
+      console.log(state)
     }
-  }, []);
+  }, [theme]);
   
   const toggleTheme = () => {
     setTheme((state) => (state === "light" ? "dark" : "light"));
