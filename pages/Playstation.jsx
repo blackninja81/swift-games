@@ -13,23 +13,25 @@ import ItemCard from "../Components/ItemsPage/PlaystationCard";
 
 const PlayStation = ({res}) => {
 
-  const [theme, setTheme] = useState("light");
+  const storage = typeof window !== "undefined" ? localStorage.theme: 'light'
+  const [theme, setTheme] = useState(storage);
+
+  useEffect(() => {
+    if (localStorage.getItem('theme') !== theme) {
+      const setString = JSON.stringify(theme);
+      window.localStorage.setItem("theme", setString);
+    }
+  }, [ theme ]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const stateString = JSON.stringify(theme);
-      window.localStorage.setItem("theme", stateString);
+      const getString = window.localStorage.getItem("theme");
+      const state = JSON.parse(getString);
+      setTheme(state)
+      console.log(state)
     }
   }, [theme]);
 
-  useEffect(() => {
-    if (typeof window !== "undefined" && window.localStorage) {
-      const getString = window.localStorage.getItem("theme");
-      const state = JSON.parse(getString);
-      setTheme(state);
-    }
-  }, [theme]);
-  
   const toggleTheme = () => {
     setTheme((curr) => (curr === "light" ? "dark" : "light"));
   };
@@ -39,7 +41,7 @@ const PlayStation = ({res}) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, []);
+    }, 2000);
 
     return () => {
       clearTimeout(timer);
