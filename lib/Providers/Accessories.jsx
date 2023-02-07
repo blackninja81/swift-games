@@ -15,12 +15,13 @@ export const getHomeAccessories = async () => {
 };
 
 export const getAccessories = async () => {
-    const { data } = await axios.get(process.env.REACT_API_URL + `${accessories}`, {
+    const { data } = await axios.get(process.env.REACT_API_URL + `${endpoints.accessories}`, {
         headers: {
           Authorization: " bearer " + process.env.REACT_ACCESS_TOKEN,
         },
       });
       const res = data.data;
+      console.log(res)
 
       if (data != null)
         return res;

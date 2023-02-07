@@ -1,32 +1,30 @@
-import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import axios from "axios";
-import { ThemeContext } from "../context/Context";
 import Footer from "../Components/Layout/Footer";
 import TopBar from "../Components/Layout/TopBar";
+import React, { useState, useEffect } from "react";
 import Category from "../Components/HomePage/Category";
-import ItemCard from "../Components/ItemsPage/PlaystationCard";
 import Playstation from "../Assets/banners/Accessory2.jpg";
+import { getAccessories } from "../lib/Providers/Accessories";
+import ItemCard from "../Components/ItemsPage/AccessoriesCard";
+import { ThemeContext, AccessoryContext } from "../context/Context";
 
-const Accessory = () => {
-
-  const storage = typeof window !== "undefined" ? localStorage.theme: 'light'
+const Accessory = ( {res} ) => {
+  const storage = typeof window !== "undefined" ? localStorage.theme : "light";
   const [theme, setTheme] = useState(storage);
 
   useEffect(() => {
-    if (localStorage.getItem('theme') !== theme) {
+    if (localStorage.getItem("theme") !== theme) {
       const setString = JSON.stringify(theme);
       window.localStorage.setItem("theme", setString);
     }
-  }, [ theme ]);
+  }, [theme]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const getString = window.localStorage.getItem("theme");
       const state = JSON.parse(getString);
-      setTheme(state)
-      console.log(state)
+      setTheme(state);
     }
   }, [theme]);
 
@@ -45,20 +43,30 @@ const Accessory = () => {
         </Head>
         <div className="playstation-page">
           <TopBar />
-          <h1>Gaming Accessories</h1>
+          <h1>Gaming Accessories 1</h1>
           <Image
             width="auto"
             height="auto"
             src={Playstation}
             alt="image description"
           />
-          <ItemCard />
+          <AccessoryContext.Provider value={{res}}>
+            <ItemCard />
+          </AccessoryContext.Provider>
           <Category />
           <Footer />
         </div>
       </div>
     </ThemeContext.Provider>
   );
+};
+
+export const getServerSideProps = async () => {
+  const res = await getAccessories();
+  
+  return {
+    props: { res },
+  };
 };
 
 export default Accessory;
