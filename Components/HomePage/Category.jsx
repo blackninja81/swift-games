@@ -10,11 +10,11 @@ const Category = () => {
     <div className="category-section">
       <h1>Choose A Category</h1>
       <div className="category-image">
-        <a className="discount" href="/Sale"><TbDiscount/></a>
-        <a className="x-box" href="/Xbox"> <FaXbox/></a> 
-        <a className="ps" href="/Playstation"><FaPlaystation/></a>
-        <a className="accesory" href="/Accessories"><BsHeadset/></a>
-        <a className="switch" href="/Switch"><SiNintendoswitch/></a>
+        <a className="discount" href="/Games/Sale"><TbDiscount/></a>
+        <a className="x-box" href="/Games/Xbox"> <FaXbox/></a> 
+        <a className="ps" href="/Games/Playstation"><FaPlaystation/></a>
+        <a className="accesory" href="/Accessories/Accessories"><BsHeadset/></a>
+        <a className="switch" href="/Games/Switch"><SiNintendoswitch/></a>
       </div>
     </div>
   );
