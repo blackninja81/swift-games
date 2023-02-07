@@ -1,12 +1,14 @@
-import React from "react";
+import React, {useContext} from "react";
 import { BsCartPlus } from "react-icons/bs";
+import endpoints from "../../lib/routes/Endpoints";
+import { GameContext } from "../../context/Context";
 import { Carousel } from "react-responsive-carousel";
-import speaker1 from "../../Assets/Accessories/speaker1.webp";
-import speaker2 from "../../Assets/Accessories/speaker2.webp";
-import speaker3 from "../../Assets/Accessories/speaker3.webp";
-import speaker4 from "../../Assets/Accessories/speaker4.webp";
+import useParams from 'react-router-dom'
 
 const DetailsPage = () => {
+  const { res } = useContext(GameContext);
+  console.log(res)
+
   return (
     <div className="item-details-section">
       <div className="image-section">

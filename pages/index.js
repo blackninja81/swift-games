@@ -36,7 +36,7 @@ export default function Home({ res, banner, discount, accessories }) {
       const getString = window.localStorage.getItem("theme");
       const state = JSON.parse(getString);
       setTheme(state)
-      console.log(state)
+      
     }
   }, [theme]);
   
