@@ -76,31 +76,31 @@ const Footer = () => {
                   </a>
                 </p>
                 <p>
-                  <a href="/Sale" className="text-decoration-none text-reset">
+                  <a href="/Games/Sale" className="text-decoration-none text-reset">
                     Discounts
                   </a>
                 </p>
                 <p>
                   <a
-                    href="/Playstation"
+                    href="/Games/Playstation"
                     className="text-decoration-none text-reset"
                   >
                     PS 4
                   </a>
                 </p>
                 <p>
-                  <a href="/Xbox" className="text-decoration-none text-reset">
+                  <a href="/Games/Xbox" className="text-decoration-none text-reset">
                     X BOX
                   </a>
                 </p>
                 <p>
-                  <a href="Switch" className="text-decoration-none text-reset">
+                  <a href="/Games/Switch" className="text-decoration-none text-reset">
                     Switch
                   </a>
                 </p>
                 <p>
                   <a
-                    href="Accessories"
+                    href="Accessories/Accessories"
                     className="text-decoration-none text-reset"
                   >
                     Accesories

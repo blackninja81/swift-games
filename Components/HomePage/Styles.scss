@@ -69,7 +69,7 @@ background-image: linear-gradient(180deg, #ffffff 25%, #FFE32C 100%);
   }
   .more-accessories{
     a{
-        color: white;
+      color: white;
     }
   }
 }
@@ -182,10 +182,16 @@ background-image: linear-gradient(180deg, #ffffff 25%, #FFE32C 100%);
   }
 
   .game-images {
-    margin: 0.5rem;
+    margin: 1rem;
     transition: 0.5s;
     overflow: hidden;
     object-fit: contain;
+    border-radius: 4rem;
+    backdrop-filter: blur(9.4px);
+    -webkit-backdrop-filter: blur(9.4px);
+    background: rgba(255, 255, 255, 0.26);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     p {
         font-weight: bold;
         font-family: "bigilla", "sans-serif";
@@ -249,6 +255,12 @@ background-image: linear-gradient(180deg, #ffffff 25%, #FFE32C 100%);
     transition: 0.5s;
     overflow: hidden;
     object-fit: contain;
+    border-radius: 4rem;
+    backdrop-filter: blur(9.4px);
+    -webkit-backdrop-filter: blur(9.4px);
+    background: rgba(255, 255, 255, 0.26);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     img {
       object-fit: contain;
       border-radius: 4rem;
