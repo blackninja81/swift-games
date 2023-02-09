@@ -21,7 +21,7 @@ export const getPs4Games = async () => {
       },
     });
     const res = data.data;
-
+    
     if (data != null)
       return res;
   return [];
